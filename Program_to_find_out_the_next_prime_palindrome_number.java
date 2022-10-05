@@ -1,20 +1,22 @@
 import java.util.Scanner;
-class primepalindrome
+class IsPP
 {
-    public static boolean isPrime(int n)
+    public static boolean Isprime(int n)
     {
+        if(n<2)
+         return false;
         int count=0;
         for(int i=2;i<=(int)Math.sqrt(n);i++)
         {
             if(n%i==0)
-             count++;
+            count++;
         }
         if(count==0)
-         return true;
+          return true;
         else
-         return false;
+          return false;
     }
-    public static boolean isPalindrome(int n)
+    public static boolean Ispalindrome(int n)
     {
         int temp=n;
         int sum=0,r;
@@ -25,23 +27,23 @@ class primepalindrome
             n=n/10;
         }
         if(temp==sum)
-          return true;
-        else
-          return false;
+         return true;
+        else 
+         return false;
     }
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
-        int a,i;
-        a=sc.nextInt();
-        
-        for(i=a+1; ;i++)
+        int n,i;
+        n=sc.nextInt();
+        for(i=n+1;;i++)
         {
-            if((isPrime(i))&&(isPalindrome(i)))
+            if(Isprime(i) && Ispalindrome(i))
             {
                 System.out.println(i);
                 break;
             }
+            
         }
     }
 }
